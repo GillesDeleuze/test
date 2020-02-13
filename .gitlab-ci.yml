@@ -1,0 +1,17 @@
+image: node:latest
+# On déclare une image de base. Ici une image contenanzt la dernière version de Nodejs
+
+cache:
+  paths:
+    - node_modules/
+# On ajoute un cache qui indique les fichiers qui doivent être sauvegardés
+
+stages:
+  - test
+# On définit les différents processuss qui seront exécutés.
+
+testing_testing:
+  stage: test
+  script:
+    - npm install
+    - npm test
